@@ -29,7 +29,7 @@ namespace Orderplacement_system.Controllers
         [HttpGet]
         public IEnumerable<UserDto> GetUsers()
         {
-            var items = repository.GetUsers().Select(user => user.AsDto());
+            var items = repository.GetUsers().Select(user => user.AsUserDto());
 
             return items;
         }
@@ -45,7 +45,7 @@ namespace Orderplacement_system.Controllers
 
             if (user is null) return NotFound();
 
-            return user.AsDto();
+            return user.AsUserDto();
         }
 
         // POST /items
@@ -66,7 +66,7 @@ namespace Orderplacement_system.Controllers
 
             repository.CreateUser(user);
 
-            return CreatedAtAction(nameof(GetUser), new { id = user.Id } , user.AsDto());
+            return CreatedAtAction(nameof(GetUser), new { id = user.Id } , user.AsUserDto());
         }
 
         // PUT /items/{id}

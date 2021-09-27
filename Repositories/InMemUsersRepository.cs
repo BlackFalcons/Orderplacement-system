@@ -8,29 +8,29 @@ namespace Orderplacement_system.Repositories
     public class InMemUsersRepository : IInMemUsersRepository
     {
         // readonly because it should not change after we have created the repository object.
-private readonly List<User> Users = new()
-{
-    new User
-    {
-        Id = Guid.NewGuid(),
-        Name = "John Test",
-        Email = "John.Test@gmail.com",
-        Phone = "999 99 999",
-        City = "Testing",
-        Street = "Testroad 43",
-        ZipCode = "1000"
-    },
-    new User
-    {
-        Id = Guid.NewGuid(),
-        Name = "Pingu",
-        Email = "pingu@gmail.com",
-        Phone = "666 66 666",
-        City = "North pole",
-        Street = "Deathvaley 25",
-        ZipCode = "20131"
-    }
-};
+        private readonly List<User> Users = new()
+        {
+            new User
+            {
+                Id = Guid.NewGuid(),
+                Name = "John Test",
+                Email = "John.Test@gmail.com",
+                Phone = "999 99 999",
+                City = "Testing",
+                Street = "Testroad 43",
+                ZipCode = "1000"
+            },
+            new User
+            {
+                Id = Guid.NewGuid(),
+                Name = "Pingu",
+                Email = "pingu@gmail.com",
+                Phone = "666 66 666",
+                City = "North pole",
+                Street = "Deathvaley 25",
+                ZipCode = "20131"
+            }
+        };
 
         public IEnumerable<User> GetUsers()
         {

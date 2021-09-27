@@ -22,6 +22,7 @@ namespace Orderplacement_system
         {
             // AddSingleton having one copy an instance of a type accross the entire lifetime of the program.
             services.AddSingleton<IInMemUsersRepository, InMemUsersRepository>();
+            services.AddSingleton<IInMemOrderRepository, InMemOrderRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
